@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- als programmas een folder in content is, dan is de uitkomst -> Programmas | Scouting Tibrag Sneek <- in de titel tab -->
+	<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+	<!-- voeg styles toe (css) -->
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+
+
+	<!-- SCSS (aka sass) object oriented css -->
+	{{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
+	{{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
+		<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+	{{ end }}
+
+	<!-- jQuery from Google's CDN -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- JS -->
+	{{ with resources.Get "js/script.js" }}
+		{{ if hugo.IsDevelopment }}
+			{{ with . | js.Build }}
+				<script defer src="{{ .RelPermalink }}"></script>
+			{{ end }}
+		{{ else }}
+			{{ $opts := dict "minify" true }}
+			{{ with . | js.Build $opts | fingerprint }}
+				<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ with resources.Get "js/navhover.js" }}
+		{{ if hugo.IsDevelopment }}
+			{{ with . | js.Build }}
+				<script defer src="{{ .RelPermalink }}"></script>
+			{{ end }}
+		{{ else }}
+			{{ $opts := dict "minify" true }}
+			{{ with . | js.Build $opts | fingerprint }}
+				<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+
+	<!-- is dit nodig? -->
+	{{ with .OutputFormats.Get "rss" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+</head>
+
+<body>
+
+{{ partial "nav.html" (dict "menuID" "main" "page" .) }}
+
+<main id="main" class="content">
