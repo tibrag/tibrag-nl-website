@@ -16,13 +16,13 @@ title = 'Scouting Tibrag Sneek'
     weight  = 20
     
     [[menus.main]]
-        name    = 'Dolfijnen'
+        name    = '[leeftijd] Dolfijnen'
         pageRef = '/groepen/dolfijnen'
         parent  = 'Groepen'
         weight  = 21
         
     [[menus.main]]
-        name    = 'Zeeverkenners'
+        name    = '[leeftijd] Zeeverkenners'
         pageRef = '/groepen/zeeverkenners'
         parent  = 'Groepen'
         weight  = 22

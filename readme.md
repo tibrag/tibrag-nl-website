@@ -8,6 +8,8 @@
 
 
 ## Webpaginas ideeën:
+### Start
+- samenvatting van de website (at a glance)
 
 ### Wie zijn wij
 
