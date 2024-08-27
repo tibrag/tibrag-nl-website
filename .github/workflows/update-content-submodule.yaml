@@ -15,9 +15,18 @@ jobs:
         submodules: recursive
         token: ${{ secrets.PAT_GITHUB }}
 
+    - name: Print Git Configuration
+      run: git config --list
+
+    - name: Print Repository Status
+      run: |
+        git status
+        git submodule status
+
     - name: Update submodule
       run: |
+        git submodule update --init --recursive
         git submodule update --remote --merge
         git add content
-        git commit -m "Update submodule: content"
+        git commit -m "Update submodule: content" || echo "No changes to commit"
         git push origin main
