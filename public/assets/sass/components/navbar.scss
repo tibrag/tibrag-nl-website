@@ -1,0 +1,115 @@
+@use '../util' as *;
+
+header {
+
+}
+
+nav {
+    ul, li {
+        display: inline;
+    }
+
+    li {
+        text-transform: uppercase;
+    }
+
+    a {
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+        color: var(--text-color);
+    }
+
+    li a:hover, li a:focus {
+        color: var(--text-color2);
+        text-decoration: none;
+    }
+}
+
+.nav {
+    background: #1F2638;
+    width: 100%;
+    text-align: left;
+    line-height: 30px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    &__menu {
+
+    }
+
+    &__dropdown {
+        position: relative;
+        overflow: hidden;
+
+        > a {
+            display: inline-block;
+        }
+
+        > li {
+            display: block;
+        }
+
+        li a {
+            display: block;
+        }
+
+        :hover > ul {
+            display: block;
+        }
+    }
+    &__submenu {
+        background: #1F2638;
+        top: 25px;
+        left: 0;
+        z-index: 1;
+        width: 300px;
+        padding: 12px 0 0 0;
+
+        @include breakpoint(medium) {
+            display: none;
+            position: absolute;
+        }
+
+        > li {
+
+            a {
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+                margin-left: -10px;
+                padding-top: 10px;
+                padding-left: 20px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+/* Screen reader text */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover, .screen-reader-text:active, screen-reader-text:focus {
+    background-color: #c7c6c6;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+    clip: auto !important;
+    color: #0a153f;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
