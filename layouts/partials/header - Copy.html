@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        #dialogText {
+            color: white;
+            background-color: #333333;
+        }
+        
+        #dialogWrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background-color: #EEEEEE;
+        }
+        
+        #dialogWrapCell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        #mainDialog {
+            max-width: 400px;
+            margin: 5px;
+            border: solid #AAAAAA 1px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 3px #AAAAAA;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            text-align: left;
+        }
+        #mainDialog > * {
+            padding: 10px 30px;
+        }
+        #passArea {
+            padding: 20px 30px;
+            background-color: white;
+        }
+        #passArea > * {
+            margin: 5px auto;
+        }
+        #pass {
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+        }
+        
+        #messageWrapper {
+            float: left;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+        
+        .notifyText {
+            display: none;
+        }
+        
+        #invalidPass {
+            color: red;
+        }
+        
+        #success {
+            color: green;
+        }
+        
+        #submitPass {
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #E7E7E7;
+            border: solid gray 1px;
+            float: right;
+            cursor: pointer;
+        }
+        #contentFrame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #attribution {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        #attribution, #attribution a {
+            color: #999;
+        }
+        .error {
+            display: none;
+            color: red;
+        }
+    </style>
+	<!-- als programmas een folder in content is, dan is de uitkomst -> Programmas | Scouting Tibrag Sneek <- in de titel tab -->
+	<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+	<!-- voeg styles toe (css) -->
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+
+
+	<!-- SCSS (aka sass) object oriented css -->
+	{{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
+	{{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
+		<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+	{{ end }}
+
+	<!-- jQuery from Google's CDN -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- JS -->
+	{{ with resources.Get "js/script.js" }}
+		{{ if hugo.IsDevelopment }}
+			{{ with . | js.Build }}
+				<script defer src="{{ .RelPermalink }}"></script>
+			{{ end }}
+		{{ else }}
+			{{ $opts := dict "minify" true }}
+			{{ with . | js.Build $opts | fingerprint }}
+				<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ with resources.Get "js/navhover.js" }}
+		{{ if hugo.IsDevelopment }}
+			{{ with . | js.Build }}
+				<script defer src="{{ .RelPermalink }}"></script>
+			{{ end }}
+		{{ else }}
+			{{ $opts := dict "minify" true }}
+			{{ with . | js.Build $opts | fingerprint }}
+				<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+
+	<!-- is dit nodig? -->
+	{{ with .OutputFormats.Get "rss" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+</head>
+
+<body>
+
+{{ partial "nav.html" (dict "menuID" "main" "page" .) }}
+
+<main id="main" class="content">

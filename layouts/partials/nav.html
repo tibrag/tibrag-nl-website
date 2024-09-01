@@ -1,11 +1,17 @@
 <header class="header container">
   {{- $page := .page }}
   {{- $menuID := .menuID }}
+  {{- $image := resources.Get "images/lelievlet.svg"}}
   
   {{- with index site.Menus $menuID }}
     <nav class="nav">
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
+        <li class="nav__logo nav_item">
+          {{- with $image }}
+            <a href="\"><img src="{{ .RelPermalink }}"></a>
+          {{- end}}
+        </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
     </nav>
@@ -28,17 +34,13 @@
       {{- end }}
       {{ if .HasChildren }}
         <li class="nav__dropdown nav_item">
-          <a
-            {{- range $k, $v := $attrs }}
-              {{- with $v }}
-                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-              {{- end }}
-            {{- end -}}
-          >{{ $name }}</a>
+          <a>{{ $name }}</a>
           {{- with .Children }}
-            <ul class="nav__submenu">
-              {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-            </ul>
+            <div class="nav__submenu">
+              <ul class="">
+                {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+              </ul>
+            </div>
           {{- end }}
         </li>
       {{ else }}
@@ -50,11 +52,6 @@
               {{- end }}
             {{- end -}}
           >{{ $name }}</a>
-          {{- with .Children }}
-            <ul class="nav__subnav">
-              {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-            </ul>
-          {{- end }}
         </li>
       {{ end }}
     {{- end }}

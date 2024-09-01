@@ -260,10 +260,10 @@
       showSuperfishUl: methods.show
     });
   })(jQuery);
-  if (jQuery("ul.nav__submenu").css("position") == "absolute") {
+  if (jQuery("div.nav__submenu").css("position") == "absolute") {
     jQuery(document).ready(function() {
       jQuery("ul.nav__menu").superfish({
-        popUpSelector: "ul.nav__submenu",
+        popUpSelector: "div.nav__submenu",
         delay: 400,
         speed: "fast",
         dropShadows: false,

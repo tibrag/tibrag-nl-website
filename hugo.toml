@@ -2,50 +2,92 @@ baseURL = 'https://example.org/'
 languageCode = 'nl-NL'
 title = 'Scouting Tibrag Sneek'
 
-
+[params]
+robots_txt = true
 
 [menus]
-  [[menus.main]]
-    name    = 'Start'
-    pageRef = '/'
+    [[menus.main]]
+    name    = 'De vereniging'
+    pageRef = '/de_vereniging'
     weight  = 10
+    
+    [[menus.main]]
+        name    = 'Wat is scouting?'
+        pageRef = '/de_vereniging/scouting'
+        parent  = 'De vereniging'
+        weight  = 11
+        
+    [[menus.main]]
+        name    = 'Wat is TIBRAG?'
+        pageRef = '/de_vereniging/tibrag'
+        parent  = 'De vereniging'
+        weight  = 12
+        
+    [[menus.main]]
+        name    = 'Speltakken'
+        pageRef = '/de_vereniging/speltakken'
+        parent  = 'De vereniging'
+        weight  = 13
 
   [[menus.main]]
-    name    = 'Groepen'
-    pageRef = '/groepen'
+    name    = 'Voor Leden'
+    pageRef = '/leden'
     weight  = 20
     
     [[menus.main]]
         name    = '[leeftijd] Dolfijnen'
-        pageRef = '/groepen/dolfijnen'
-        parent  = 'Groepen'
+        pageRef = '/leden/dolfijnen'
+        parent  = 'Voor Leden'
         weight  = 21
         
     [[menus.main]]
         name    = '[leeftijd] Zeeverkenners'
-        pageRef = '/groepen/zeeverkenners'
-        parent  = 'Groepen'
+        pageRef = '/leden/zeeverkenners'
+        parent  = 'Voor Leden'
         weight  = 22
+
+#  [[menus.main]]
+#    name    = 'Voor Leiding'
+#    pageRef = '/leiding'
+#    weight  = 30
+#    
+#    [[menus.main]]
+#        name    = 'Leiding linkjes'
+#        pageRef = '/leiding/leiding-linkjes'
+#        parent  = 'Voor Leiding'
+#        weight  = 31
+#        
+#    [[menus.main]]
+#        name    = 'Bestanden'
+#        pageRef = '/leiding/bestanden'
+#        parent  = 'Voor Leiding'
+#        weight  = 32
+
+  [[menus.main]]
+    name    = 'Meedoen'
+    pageRef = '/meedoen'
+    weight  = 40
+    
+    [[menus.main]]
+        name    = 'Lid Worden'
+        pageRef = '/meedoen/lid_worden'
+        parent  = 'Meedoen'
+        weight  = 41
+        
+    [[menus.main]]
+        name    = 'Leiding Worden'
+        pageRef = '/meedoen/leiding_worden'
+        parent  = 'Meedoen'
+        weight  = 42
+        
+    [[menus.main]]
+        name    = 'Club Sponsoren'
+        pageRef = '/meedoen/sponsoren'
+        parent  = 'Meedoen'
+        weight  = 43
 
   [[menus.main]]
     name    = 'Contact'
     pageRef = '/contact'
-    weight  = 30
-
-  [[menus.main]]
-    name    = 'Leiding'
-    pageRef = '/leiding'
-    weight  = 40
-    
-    [[menus.main]]
-        name    = 'Leiding linkjes'
-        pageRef = '/leiding/leiding-linkjes'
-        parent  = 'Leiding'
-        weight  = 41
-        
-    [[menus.main]]
-        name    = 'Bestanden'
-        pageRef = '/leiding/bestanden'
-        parent  = 'Leiding'
-        weight  = 42
+    weight  = 50
 
