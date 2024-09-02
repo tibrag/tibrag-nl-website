@@ -8,15 +8,7 @@
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
-          <a href="\"><img 
-            {{- $attrs := dict "src" $image }}
-            {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
-            {{- range $k, $v := $attrs }}
-              {{- with $v }}
-                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-              {{- end }}
-            {{- end -}}
-          a>
+          <a href="\"><img src="{{ $image.RelPermalink }}"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
