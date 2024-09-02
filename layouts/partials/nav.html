@@ -8,9 +8,7 @@
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
-          {{- with $image }}
-            <a href="\"><img src=".{{ .RelPermalink | safeURL }}"></a>
-          {{- end}}
+          <a href="\"><img src="{{ $image | safeURL }}"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
