@@ -1,29 +1,9 @@
 <header class="header container">
+  {{- $image_name := "lelievlet.svg" }}
+
   {{- $page := .page }}
   {{- $menuID := .menuID }}
-  
-  {{- $image := "lelievlet.svg" }}
-  {{ printf "<!-- file name: %#v -->" $image | safeHTML }}
-  {{ printf "<!-- file path: %#v -->" (printf "%s%s" "images/" $image) | safeHTML }}
-
-  {{- $baseurl := (relURL $page.Site.BaseURL) }}
-  {{ printf "<!-- baseURL: %#v -->" $baseurl | safeHTML }}
-
-  {{- $image_pub := (printf "%s%s%s" $baseurl "/images/" $image) }}
-  {{ printf "<!-- file path: %s%s%s -->" $baseurl "/images/" $image | safeHTML }}
-
-  {{- $image := resources.Get (printf "%s%s%s" $baseurl "/images/" $image) }}
-  {{ printf "<!-- image resource: %#v -->" $image | safeHTML }}
-  
-  {{ $res_img := resources.GetMatch "**/lelievlet.svg" }}
-  {{ printf "<!-- image resource (wildcard path): %#v -->" $res_img | safeHTML }}
-  {{ with $res_img | safeHTML }}
-    {{ printf "<!-- image path: %#v -->" $res_img.Name | safeHTML }}
-  {{ end }}
-
-  {{- range .Resources.Match "images/*.svg" }}
-    {{ printf "<!-- %#v -->" . | safeHTML }}
-  {{- end }}
+  {{- $image := resources.GetMatch (printf "%s%s" "**/" $image_name) }}
 
   {{- with index site.Menus $menuID }}
     <nav class="nav">
@@ -31,10 +11,7 @@
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
           <a href="\"><img 
-            {{ with $image }}src="{{ $image.RelPermalink }}" 
-            {{ else }}
-              {{ with $res_img }}src="{{ $res_img.RelPermalink }}"{{ end }}
-            {{ end }} alt="Start"></a>
+            {{ with $image }}src="{{ $image.RelPermalink }}"{{ end }} alt="Start"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
