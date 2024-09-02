@@ -15,7 +15,7 @@
   {{- $image := resources.Get (printf "%s%s%s" $baseurl "/images/" $image) }}
   {{ printf "<!-- image resource: %#v -->" $image | safeHTML }}
   
-  {{ $res_img := resources.GetMatch (printf "%s%s" $baseurl "/*/lelievlet.svg") }}
+  {{ $res_img := resources.GetMatch "**/lelievlet.svg" }}
   {{ printf "<!-- image resource (wildcard path): %#v -->" $res_img | safeHTML }}
   {{ with $res_img | safeHTML }}
     {{ printf "<!-- image path: %#v -->" $res_img.Name | safeHTML }}
@@ -30,10 +30,10 @@
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
-          <a href="\"><img \
-            {{ with $image }}src="{{ $image.RelPermalink }}" \
+          <a href="\"><img 
+            {{ with $image }}src="{{ $image.RelPermalink }}" 
             {{ else }}
-              {{ with $res_img }}src="{{ $res_img.RelPermalink }}"{{ end }} \
+              {{ with $res_img }}src="{{ $res_img.RelPermalink }}"{{ end }}
             {{ end }} alt="Start"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
