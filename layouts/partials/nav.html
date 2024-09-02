@@ -3,20 +3,24 @@
   {{- $menuID := .menuID }}
   
   {{- $image := "lelievlet.svg" }}
-  {{ printf "<!-- %#v -->" $image | safeHTML }}
-  {{ printf "<!-- %#v -->" (printf "%s%s" "images/" $image) | safeHTML }}
+  {{ printf "<!-- file name: %#v -->" $image | safeHTML }}
+  {{ printf "<!-- file path: %#v -->" (printf "%s%s" "images/" $image) | safeHTML }}
 
   {{- $baseurl := (relURL $page.Site.BaseURL) }}
-  {{ printf "<!-- %#v -->" $baseurl | safeHTML }}
+  {{ printf "<!-- baseURL: %#v -->" $baseurl | safeHTML }}
 
   {{- $image_pub := (printf "%s%s%s" $baseurl "/images/" $image) }}
-  {{ printf "<!-- %s%s%s -->" $baseurl "/images/" $image | safeHTML }}
+  {{ printf "<!-- file path: %s%s%s -->" $baseurl "/images/" $image | safeHTML }}
 
   {{- $image := resources.Get (printf "%s%s%s" $baseurl "/images/" $image) }}
-  {{ printf "<!-- %#v -->" $image | safeHTML }}
+  {{ printf "<!-- image resource: %#v -->" $image | safeHTML }}
   
-  
-  {{ printf "<!-- %#v -->" ( resources.GetMatch (printf "%s%s" $baseurl "/*/lelievlet.svg")).Name | safeHTML }}
+  {{ $res_img := resources.GetMatch (printf "%s%s" $baseurl "/*/lelievlet.svg") }}
+  {{ printf "<!-- image resource (wildcard path): %#v -->" $res_img | safeHTML }}
+  {{ with $res_img | safeHTML }}
+    {{ printf "<!-- image path: %#v -->" $res_img.Name | safeHTML }}
+  {{ end }}
+
   {{- range .Resources.Match "images/*.svg" }}
     {{ printf "<!-- %#v -->" . | safeHTML }}
   {{- end }}
