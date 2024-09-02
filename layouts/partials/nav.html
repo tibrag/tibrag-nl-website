@@ -16,7 +16,7 @@
   {{ printf "<!-- %#v -->" $image | safeHTML }}
   
   
-  {{ printf "<!-- %#v -->" ( resources.GetMatch "*/lelievlet.svg").Name | safeHTML }}
+  {{ printf "<!-- %#v -->" ( resources.GetMatch (printf "%s%s" $baseurl "/*/lelievlet.svg")).Name | safeHTML }}
   {{- range .Resources.Match "images/*.svg" }}
     {{ printf "<!-- %#v -->" . | safeHTML }}
   {{- end }}
