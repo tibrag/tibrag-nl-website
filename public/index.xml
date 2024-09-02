@@ -10,6 +10,13 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zeeverkenners</title>
+      <link>http://localhost:1313/groepen/zeeverkenners/</link>
+      <pubDate>Tue, 20 Aug 2024 16:03:52 +0200</pubDate>
+      <guid>http://localhost:1313/groepen/zeeverkenners/</guid>
+      <description>Programma Zeeverkenners test&#xA;titel? titel groter? def pythoncode(content, is_in_quotes): if content and is_in_quotes: print(&amp;#34;codeblock!&amp;#34;) testing 1 test 2 vanuit github test 3 vanuit github</description>
+    </item>
+    <item>
+      <title>Zeeverkenners</title>
       <link>http://localhost:1313/leden/zeeverkenners/</link>
       <pubDate>Tue, 20 Aug 2024 16:03:52 +0200</pubDate>
       <guid>http://localhost:1313/leden/zeeverkenners/</guid>

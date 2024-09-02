@@ -9,7 +9,7 @@
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
           {{- with $image }}
-            <a href="\"><img src="{{ .RelPermalink }}"></a>
+            <a href="\"><img src="{{ .Permalink }}"></a>
           {{- end}}
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
