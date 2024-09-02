@@ -9,9 +9,9 @@
   {{- $baseurl := (relURL $page.Site.BaseURL) }}
   {{ printf "<!-- %#v -->" $baseurl | safeHTML }}
 
-  {{ printf "<!-- %s%s%s -->" $baseurl "images/" $image | safeHTML }}
+  {{ printf "<!-- %s%s%s -->" $baseurl "/images/" $image | safeHTML }}
 
-  {{- $image := resources.Get (printf "%s%s%s" $baseurl "images/" $image) }}
+  {{- $image := resources.Get (printf "%s%s%s" $baseurl "/images/" $image) }}
   {{ printf "<!-- %#v -->" $image | safeHTML }}
   
   {{- with index site.Menus $menuID }}
