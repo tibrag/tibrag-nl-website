@@ -2,6 +2,11 @@ baseURL = 'https://example.org/'
 languageCode = 'nl-NL'
 title = 'Scouting Tibrag Sneek'
 
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+
 [params]
 robots_txt = true
 

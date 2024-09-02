@@ -9,20 +9,28 @@
   {{- $baseurl := (relURL $page.Site.BaseURL) }}
   {{ printf "<!-- %#v -->" $baseurl | safeHTML }}
 
+  {{- $image_pub := (printf "%s%s%s" $baseurl "/images/" $image) }}
   {{ printf "<!-- %s%s%s -->" $baseurl "/images/" $image | safeHTML }}
 
   {{- $image := resources.Get (printf "%s%s%s" $baseurl "/images/" $image) }}
   {{ printf "<!-- %#v -->" $image | safeHTML }}
   
+  
+  {{ printf "<!-- %#v -->" ( resources.GetMatch "*/lelievlet.svg").Name | safeHTML }}
+  {{- range .Resources.Match "images/*.svg" }}
+    {{ printf "<!-- %#v -->" . | safeHTML }}
+  {{- end }}
+
   {{- with index site.Menus $menuID }}
-    {{- range . }}
-      {{ printf "<!-- %#v -->" . | safeHTML }}
-    {{- end }}
     <nav class="nav">
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
-          <a href="\"><img {{ with $image }}src="{{ $image.RelPermalink }}"{{ end }} alt="Start"></a>
+          <a href="\"><img \
+            {{ with $image }}src="{{ $image.RelPermalink }}" \
+            {{ else }}
+              {{ with $image_pub }}src="{{ $image_pub.RelPermalink }}"{{ end }} \
+            {{ end }} alt="Start"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
