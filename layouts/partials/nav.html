@@ -1,10 +1,21 @@
 <header class="header container">
   {{- $page := .page }}
   {{- $menuID := .menuID }}
-  {{- $image := resources.GetMatch (resources.Get "images/lelievlet.svg") }}
+  
+  {{- $image := "lelievlet.svg" }}
+  {{ printf "<!-- %#v -->" $image | safeHTML }}
+  {{ printf "<!-- %#v -->" (printf "%s%s" "images/" $image) | safeHTML }}
+
+  {{- $image := resources.Get (printf "%s%s" "images/" $image) }}
+  {{ printf "<!-- %#v -->" $image | safeHTML }}
+  
+  {{- $image := resources.GetMatch $image }}
+  {{ printf "<!-- %#v -->" $image | safeHTML }}
+  
   
   {{- with index site.Menus $menuID }}
     <nav class="nav">
+      <!-- test comment -->
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
