@@ -17,6 +17,7 @@ nav {
         color: var(--light-bg);
         display: inline-block;
         width: 100%;
+        color: var(--light-bg-accent);
     }
 
     li a:hover, li a:focus {
@@ -26,7 +27,7 @@ nav {
 }
 
 .nav {
-    background: var(--light-bg-accent);
+    background: var(--background);
     width: 100%;
     text-align: left;
     line-height: 30px;
@@ -84,12 +85,12 @@ nav {
     }
 
     &__submenu > ul {
+        background: var(--background);
         display: grid;
         grid-gap: 0;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         list-style: none;
-        background: var(--light-bg-accent);
         max-width: rem(300);
         min-width: rem(250);
         text-wrap: nowrap;

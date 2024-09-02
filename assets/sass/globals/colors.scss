@@ -22,7 +22,7 @@
     --light-text-accent: hsl(345.6, 83.33%, 64.71%);
     --light-bg-accent: hsl(207.79, 79.07%, 33.73%);
     --light-accent3: hsl(187.01, 86.16%, 31.18%);
-    --light-bg: hsl(21, 100%, 95%);
+    --light-bg: hsl(21, 100%, 100%);
     --light-card-hover: hsl(228, 33%, 91%);
     --light-text1: hsl(230, 12%, 44%);
     --light-text2: hsl(230, 17%, 14%);
@@ -36,22 +36,22 @@
     // --toggle-button: var(--toggle-button-light);
   }
   
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: var(--dark-bg);
-      --text-color: var(--dark-text2);
-      --text-color2: var(--dark-text1);
-      --card-bg: var(--dark-card);
-      --card-hover: var(--dark-card-hover);
-      --toggle: var(--light-bg);
-      --toggle-bg: linear-gradient(
-        225deg,
-        var(--toggle-bg-end) 0%,
-        var(--toggle-bg-start) 98.02%
-      );
-      --toggle-button: var(--dark-bg);
-    }
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   :root {
+  //     --background: var(--dark-bg);
+  //     --text-color: var(--dark-text2);
+  //     --text-color2: var(--dark-text1);
+  //     --card-bg: var(--dark-card);
+  //     --card-hover: var(--dark-card-hover);
+  //     --toggle: var(--light-bg);
+  //     --toggle-bg: linear-gradient(
+  //       225deg,
+  //       var(--toggle-bg-end) 0%,
+  //       var(--toggle-bg-start) 98.02%
+  //     );
+  //     --toggle-button: var(--dark-bg);
+  //   }
+  // }
   
   body.light {
     --background: var(--light-bg);
