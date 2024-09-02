@@ -11,8 +11,13 @@
   
   {{- $image := resources.GetMatch $image }}
   {{ printf "<!-- %#v -->" $image | safeHTML }}
-  
-  
+
+  {{- $imagef := resources.GetMatch "lelievlet.svg" }}
+  {{ printf "<!-- %#v -->" $imagef | safeHTML }}
+
+  {{- $imagef := .Resources.GetMatch "lelievlet.svg" }}
+  {{ printf "<!-- %#v -->" $imagef | safeHTML }}
+
   {{- with index site.Menus $menuID }}
     <nav class="nav">
       <!-- test comment -->
