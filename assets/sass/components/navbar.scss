@@ -1,81 +1,93 @@
 @use '../util' as *;
 
-header {
-
-}
-
-nav {
-    ul, li {
-        display: inline;
-    }
-
-    li {
-    }
-
-    a {
-        font-size: 1em;
-        color: var(--light-bg);
-        display: inline-block;
-        width: 100%;
-        color: var(--light-bg-accent);
-    }
-
-    li a:hover, li a:focus {
-        color: var(--light-text-accent);
-        text-decoration: none;
-    }
-}
-
+// navigatie (achtergrond) element
 .nav {
+    position: fixed;
     background: var(--background);
     width: 100%;
     text-align: left;
     line-height: 30px;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding: 0 rem(40) 0 rem(40);
+    height: rem(80);
 
+    // scouting logo container
     &__logo {
-
+        // scouting logo afbeelding
         img {
             top: rem(-0);
             position: absolute;
             max-width: inherit;
             max-height: rem(80);
             
+            // verandering voor groter scherm:
             @include breakpoint(medium) {
                 max-height: rem(120);
             }
         }
-
     }
 
+    // main navigatie menu
     &__menu {
         display: grid;
-        grid-gap: 0;
+        position: relative;
+        width: 100%;
+        grid-gap: rem(10);
         grid-template-columns: auto;
-        grid-template-rows: repeat(6, auto);
-        justify-items: stretch;
-        margin: rem(2) rem(2) rem(2) rem(2);
+        grid-template-rows: repeat(5, auto);
+        justify-content: stretch;
+        list-style: none; // geen markers
+        padding: 0; // geen maker-padding
 
+        // verandering voor groter scherm:
         @include breakpoint(medium) {
-            grid-template-rows: auto;
-            grid-template-columns: repeat(6, auto);
+            grid-template-rows: 1fr;
+            grid-template-columns: auto 1fr repeat(4, max-content);
+
+            // logo
+            > :first-child {
+                justify-self: start;
+                grid-column: 1;
+            }
+
+            // eerste tekst item van de navigatie
+            > :nth-child(2) {
+                grid-column: 3;
+            }
+
+            > :nth-child(n+2) {
+                justify-self: end;
+            }
         }
 
-        li a {
+        // navigatie link (tekst)
+        a {
             padding-left: rem(10); //padding around submenu (top, right, bot, left)
+            font-size: 1em;
+            color: var(--light-bg);
+            display: inline-block;
+            width: 100%;
+            color: var(--light-bg-accent);
+
+            // muis erop of tab target
+            &:hover, &:focus {
+                color: var(--light-text-accent);
+                text-decoration: none;
+            }
         }
     }
 
+    // menu element met onderliggend menu
     &__dropdown {
         position: relative;
         cursor: pointer;
         // overflow: hidden;
     }
 
+    // het onderliggende menu
     &__submenu {
+        background: var(--background);
 
-
+        //verandering voor groter scherm:
         @include breakpoint(medium) {
             position: absolute;
             z-index: 1000;
@@ -83,9 +95,13 @@ nav {
             margin-top: rem(-3);
         }
     }
+    // items in de navigatie (waar de tekst in zit)
+    &__item {
+        display: inline;
+    }
 
+    // de lijst in het submenu
     &__submenu > ul {
-        background: var(--background);
         display: grid;
         grid-gap: 0;
         grid-template-columns: 1fr;
@@ -95,9 +111,8 @@ nav {
         min-width: rem(250);
         text-wrap: nowrap;
         padding: rem(15) rem(10) rem(0) rem(0); //padding around submenu (top, right, bot, left)
-
-        
-
+ 
+        // de linkjes in het submenu
         > li {
             a {
                 -webkit-transition: all 0.3s;
@@ -112,7 +127,7 @@ nav {
     }
 }
 
-/* Screen reader text */
+// Screen reader text (voor slechtzienden)
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
@@ -121,6 +136,7 @@ nav {
     overflow: hidden;
 }
 
+// Screen reader (voor slechtzienden)
 .screen-reader-text:hover, .screen-reader-text:active, screen-reader-text:focus {
     background-color: #c7c6c6;
     border-radius: 3px;
