@@ -1,14 +1,14 @@
 <header class="header container">
   {{- $page := .page }}
   {{- $menuID := .menuID }}
-  {{- $image := resources.Get "images/lelievlet.svg"}}
+  {{- $image := resources.GetMatch (resources.Get "images/lelievlet.svg") }}
   
   {{- with index site.Menus $menuID }}
     <nav class="nav">
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
-          <a href="\"><img src="{{ $image.RelPermalink }}"></a>
+          <a href="\"><img {{ with $image }}src="{{ $image.RelPermalink }}"{{ end }} alt="Start"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
