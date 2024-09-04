@@ -28,6 +28,8 @@
   </url><url>
     <loc>http://localhost:1313/de_vereniging/</loc>
   </url><url>
+    <loc>http://localhost:1313/groepen/dolfijnen/</loc>
+  </url><url>
     <loc>http://localhost:1313/leden/dolfijnen/</loc>
   </url><url>
     <loc>http://localhost:1313/leiding/leiding-linkjes/</loc>

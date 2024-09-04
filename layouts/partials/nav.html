@@ -4,13 +4,14 @@
   {{- $page := .page }}
   {{- $menuID := .menuID }}
   {{- $image := resources.GetMatch (printf "%s%s" "**/" $image_name) }}
+  {{- $home := $page.Site.BaseURL }}
 
   {{- with index site.Menus $menuID }}
     <nav class="nav">
       <a class="screen-reader-text visually-hidden" href="#main">Direct naar inhoud</a>
       <ul class="nav__menu">
         <li class="nav__logo nav_item">
-          <a href="\"><img 
+          <a href="{{ $home }}"><img 
             {{ with $image }}src="{{ $image.RelPermalink }}"{{ end }} alt="Start"></a>
         </li>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}

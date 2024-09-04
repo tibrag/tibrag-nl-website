@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Groepens on Scouting Tibrag Sneek</title>
+    <title>Groepen on Scouting Tibrag Sneek</title>
     <link>http://localhost:1313/groepen/</link>
-    <description>Recent content in Groepens on Scouting Tibrag Sneek</description>
+    <description>Recent content in Groepen on Scouting Tibrag Sneek</description>
     <generator>Hugo</generator>
     <language>nl-NL</language>
     <lastBuildDate>Tue, 20 Aug 2024 16:03:52 +0200</lastBuildDate>
@@ -13,7 +13,14 @@
       <link>http://localhost:1313/groepen/zeeverkenners/</link>
       <pubDate>Tue, 20 Aug 2024 16:03:52 +0200</pubDate>
       <guid>http://localhost:1313/groepen/zeeverkenners/</guid>
-      <description>Programma Zeeverkenners test&#xA;titel? titel groter? def pythoncode(content, is_in_quotes): if content and is_in_quotes: print(&amp;#34;codeblock!&amp;#34;) testing 1 test 2 vanuit github test 3 vanuit github</description>
+      <description>Lorem ipsum odor amet, consectetuer adipiscing elit. Venenatis sit feugiat cubilia ac nascetur mattis diam. Mollis in finibus ut, torquent quis curae. Malesuada vivamus potenti velit suscipit finibus ligula dolor posuere. Class ornare hendrerit ac dolor sed. Montes vel taciti torquent nascetur donec. Eleifend class proin inceptos et suscipit vivamus mattis orci. Faucibus proin auctor vivamus velit proin pretium libero suspendisse posuere. Venenatis mi maximus nam litora enim feugiat pharetra sodales.</description>
+    </item>
+    <item>
+      <title>Dolfijnen</title>
+      <link>http://localhost:1313/groepen/dolfijnen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/groepen/dolfijnen/</guid>
+      <description>Lorem ipsum odor amet, consectetuer adipiscing elit. Arcu potenti et lobortis eget risus. Massa lacinia nascetur venenatis nullam diam? Mi finibus dolor dignissim non varius gravida. Eu vehicula sociosqu conubia neque rhoncus porttitor. Sed curabitur cursus fermentum fringilla nec faucibus duis nibh. Agravida scelerisque natoque justo suspendisse aliquet est nunc. Ad ut sit, cursus porta vitae inceptos ad amet. Auctor potenti quam aliquam rhoncus quam nostra. Rhoncus commodo urna neque nisi at nostra feugiat hendrerit.</description>
     </item>
   </channel>
 </rss>
