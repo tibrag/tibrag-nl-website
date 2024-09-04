@@ -1,5 +1,9 @@
 @use '../util' as *;
 
+.header {
+    grid-area: header;
+}
+
 // navigatie (achtergrond) element
 .nav {
     position: fixed;
@@ -29,6 +33,8 @@
     // main navigatie menu
     &__menu {
         display: grid;
+        height: 100%;
+        margin: auto;
         position: relative;
         width: 100%;
         grid-gap: rem(10);
@@ -37,6 +43,7 @@
         justify-content: stretch;
         list-style: none; // geen markers
         padding: 0; // geen maker-padding
+        align-items: center;
 
         // verandering voor groter scherm:
         @include breakpoint(medium) {

@@ -40,13 +40,13 @@ robots_txt = true
     weight  = 20
     
     [[menus.main]]
-        name    = '[leeftijd] Dolfijnen'
+        name    = 'Dolfijnen'
         pageRef = '/leden/dolfijnen'
         parent  = 'Voor Leden'
         weight  = 21
         
     [[menus.main]]
-        name    = '[leeftijd] Zeeverkenners'
+        name    = 'Zeeverkenners'
         pageRef = '/leden/zeeverkenners'
         parent  = 'Voor Leden'
         weight  = 22

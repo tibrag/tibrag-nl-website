@@ -10,6 +10,7 @@
 ## Webpaginas ideeën:
 ### Start
 - samenvatting van de website (at a glance)
+- club sponsoren duidelijk zichtbaar
 
 ### Wie zijn wij
 

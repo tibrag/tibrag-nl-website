@@ -15,7 +15,7 @@
 	
 	
 	
-		<link rel="stylesheet" href="/css/style.min.e03ddc1f038a0b8016ee22ba7b34b4f3795937ce104b811b004700a49b212052.css" integrity="sha256-4D3cHwOKC4AW7iK6ezS083lZN84QS4EbAEcApJshIFI=" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/style.min.d74089852e675912d37f9e39143a669e6b087d12165cb6e8acf2b1a2a2be4a40.css" integrity="sha256-10CJhS5nWRLTf545FDpmnmsIfRIWXLborPKxoqK&#43;SkA=" crossorigin="anonymous">
 	
 
 	
@@ -40,7 +40,7 @@
 	
 	</head>
 
-<body>
+<body class="body">
 
 <header class="header">
     <nav class="nav">
@@ -81,12 +81,12 @@
               <ul class="">
       
         <li class="nav__item">
-          <a href="/leden/dolfijnen/">[leeftijd] Dolfijnen</a>
+          <a href="/leden/dolfijnen/">Dolfijnen</a>
         </li>
       
       
         <li class="nav__item">
-          <a href="/leden/zeeverkenners/">[leeftijd] Zeeverkenners</a>
+          <a href="/leden/zeeverkenners/">Zeeverkenners</a>
         </li>
       
               </ul>
@@ -135,10 +135,10 @@
     <p>You can contact us here!</p>
 
 
-    <form method="POST" action="https://formspree.io/f/mgvwlbrb">
-        <div class="form-group row">
-            <label for="name" class="col-4 col-form-label">Name</label>
-            <div class="col-8">
+    <form class="form" method="POST" action="https://formspree.io/f/mgvwlbrb">
+        <div class="form__section">
+            <label for="name" class="form__section__label">Name</label>
+            <div class="form__section__input">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="fa fa-user"></i>
@@ -147,9 +147,9 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="email" class="col-4 col-form-label">E-mail address</label>
-            <div class="col-8">
+        <div class="form__section">
+            <label for="email" class="form__section__label">E-mail address</label>
+            <div class="form__section__input">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="fa fa-envelope"></i>
@@ -158,13 +158,13 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="message" class="col-4 col-form-label">Message</label>
-            <div class="col-8">
+        <div class="form__section">
+            <label for="message" class="form__section__label">Message</label>
+            <div class="form__section__input">
                 <textarea id="message" name="message" cols="40" rows="10" required="required" class="form-control"></textarea>
             </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group">
             <div class="offset-4 col-8">
                 <button name="submit" type="submit" class="btn btn-primary">Send</button>
             </div>
@@ -177,7 +177,7 @@
 
 </main>
 	
-<footer>
+<footer class="footer">
 	<p>&copy;2024 Scouting Tibrag Sneek</p>
 </footer>
 
