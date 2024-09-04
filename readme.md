@@ -1,10 +1,11 @@
 ## Webpaginas TODO:
-- Wie zijn wij
-- Lid worden
+- de_vereniging/tibrag (& scouting)
+- 
+- Lid worden (contributie)
 - (Leeftijds)groepen
-- Contributie
-- Sponsoren
+- Meedoen/Sponsoren
 - Verhuur
+- Contact
 
 
 ## Webpaginas ideeën:

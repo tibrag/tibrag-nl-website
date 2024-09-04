@@ -1,1 +1,29 @@
 @use '../util' as *;
+
+.form {
+    background-color: var(--toggle);
+    max-width: rem(350);
+
+    &__section {
+        &__label {
+            input {
+            }
+            
+        }
+
+        &__input {
+            &__area {
+                max-width: rem(300);
+                width: 80%;
+            }
+        }
+
+        &__button {
+            background-color: var(--light-bg-accent);
+            color: var(--background);
+            padding: rem(10) rem(20);
+            border-radius: rem(25);
+            float: right;
+        }
+    }
+}
