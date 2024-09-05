@@ -23,13 +23,6 @@
       <description>Lorem ipsum odor amet, consectetuer adipiscing elit. Condimentum leo tempor et vivamus mi velit iaculis euismod. Auctor parturient natoque commodo est natoque congue tempus orci. Sed ornare proin mus accumsan nulla viverra ante non. Semper praesent nullam ornare fermentum velit habitant morbi. Ante convallis lobortis habitasse facilisis vel senectus. Eleifend faucibus quisque pulvinar tristique diam semper. Mollis dignissim torquent lacus ligula rutrum accumsan pulvinar. Vestibulum natoque fermentum iaculis justo rutrum mus augue.</description>
     </item>
     <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
-      <description>U kunt via het volgende formulier contact met ons opnemen.</description>
-    </item>
-    <item>
       <title></title>
       <link>http://localhost:1313/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,6 +34,13 @@
       <link>http://localhost:1313/leiding/bestanden/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/leiding/bestanden/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
       <description></description>
     </item>
     <item>

@@ -4,16 +4,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: stretch;
-    gap: 0;
+    gap: rem(10);
 
     @include breakpoint(large) {
-        flex-wrap: nowrap;
     }
 }
 
 .column {
-    padding: rem(10);
-    min-width: rem(300);
+    flex: 1 0 rem(360);
 }

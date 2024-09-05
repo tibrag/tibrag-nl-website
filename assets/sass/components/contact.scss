@@ -1,29 +1,77 @@
 @use '../util' as *;
 
 .form {
+    display: grid;
+    grid-template-areas: 
+    "Name"
+    "Mail"
+    "Message"
+    "Button"
+    "Disclaimer";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: rem(8);
+    border-radius: rem(8);
     background-color: var(--toggle);
-    max-width: rem(350);
+    padding: rem(20);
+    max-width: 52ch;
 
     &__section {
-        &__label {
-            input {
+        width: 100%;
+
+        &__name {
+            grid-area: "Name";
+        }
+        &__mail {
+            grid-area: "Mail";
+        }
+        &__message {
+            grid-area: "Message";
+
+            textarea {
+                resize: vertical;
             }
+        }
+        &__button {
+            grid-area: "Button";
+
+            button {
+                cursor: pointer;
+                background-color: var(--light-bg-accent);
+                color: var(--background);
+                padding: rem(10) rem(20);
+                border: solid rem(1) rgb(56, 0, 160);
+                border-radius: rem(8);
+                float: right;
+                width: max-content;
+            }
+            button:hover {
+                background-color: var(--light-bg-accent2);
+            }
+        }
+        &__disclaimer {
+            grid-area: "Disclaimer";
+
+            p {
+                margin: rem(15) 0 0 0;
+            }
+        }
+
+        &__label {
             
         }
 
         &__input {
             &__area {
-                max-width: rem(300);
-                width: 80%;
+                border: solid rem(1) rgb(56, 0, 160);
+                border-radius: rem(8);
+                width: 100%;
+                padding: .5rem;
+                margin: 0;
             }
         }
 
         &__button {
-            background-color: var(--light-bg-accent);
-            color: var(--background);
-            padding: rem(10) rem(20);
-            border-radius: rem(25);
-            float: right;
         }
     }
 }
