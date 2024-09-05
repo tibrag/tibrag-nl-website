@@ -75,3 +75,9 @@
         }
     }
 }
+
+.maps {
+    border-radius: rem(8);
+    max-width: 52ch;
+    height: calc(100% - rem(127));
+}

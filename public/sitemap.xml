@@ -17,14 +17,13 @@
     <loc>http://localhost:1313/leden/zeeverkenners/</loc>
     <lastmod>2024-08-20T16:03:52+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
-    <lastmod>2020-02-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/readme/</loc>
   </url><url>
     <loc>http://localhost:1313/leiding/bestanden/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contact/</loc>
   </url><url>
     <loc>http://localhost:1313/de_vereniging/</loc>
   </url><url>

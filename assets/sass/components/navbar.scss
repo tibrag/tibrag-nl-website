@@ -76,9 +76,15 @@
             color: var(--light-bg-accent);
 
             // muis erop of tab target
-            &:hover, &:focus {
+            &:hover, &:focus-visible {
                 color: var(--light-text-accent);
                 text-decoration: none;
+            }
+            @supports not selector(:focus-visible) {
+                &:focus {
+                    color: var(--light-text-accent);
+                    text-decoration: none;
+                }
             }
         }
     }

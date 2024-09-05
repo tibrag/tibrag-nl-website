@@ -36,7 +36,7 @@
       {{- end }}
       {{ if .HasChildren }}
         <li class="nav__dropdown nav_item">
-          <a>{{ $name }}</a>
+          <a tabindex="0">{{ $name }}</a>
           {{- with .Children }}
             <div class="nav__submenu">
               <ul class="">
