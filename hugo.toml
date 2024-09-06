@@ -51,6 +51,12 @@ robots_txt = true
         parent  = 'Voor Leden'
         weight  = 22
 
+    [[menus.main]]
+        name    = 'Wilde Vaart'
+        pageRef = '/leden/wilde vaart'
+        parent  = 'Voor Leden'
+        weight  = 23
+
 #  [[menus.main]]
 #    name    = 'Voor Leiding'
 #    pageRef = '/leiding'
