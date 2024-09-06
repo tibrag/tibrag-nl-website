@@ -21,6 +21,7 @@
 
 ### Groepen
 - zet leeftijd erbij
+- Noem het geen speltakken. Houd de taal makkelijk.
 
 ### Contributie
 
