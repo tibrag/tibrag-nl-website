@@ -6,6 +6,9 @@ title = 'Scouting Tibrag Sneek'
   [[module.mounts]]
     source = 'assets'
     target = 'assets'
+  [module.hugoVersion]
+    extended = true
+    min = '0.133.0'
 
 [params]
 robots_txt = true
